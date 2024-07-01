@@ -1,0 +1,5 @@
+msal>=1.29.0
+streamlit>=1.36.0
+python-dotenv<0.22
+streamlit-msal>=0.2.0
+requests
