@@ -3,6 +3,9 @@ from streamlit_msal import Msal
 
 #based on https://github.com/WilianZilv/streamlit_msal
 
+# Initialization
+if 'auth_data' not in st.session_state:
+    st.session_state['auth_data'] = False
 
 from appconfig import TENANT_ID, CLIENT_ID, CLIENT_SECRET,AUTHORITY , SCOPE
 
@@ -19,10 +22,15 @@ with st.sidebar:
     )
 
 if not auth_data:
+# if not st.session_state['auth_data']:
     st.write("Authenticate to access protected content")
     st.stop()
 
-st.write("Protected content available")
+# st.write("Protected content available")
+
+# Initialization
+st.session_state['auth_data'] = True
+
 import streamlit as st
 import pandas as pd
 from sklearn.datasets import load_iris
